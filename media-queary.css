@@ -1,0 +1,13 @@
+@media screen and (max-width:1000px) {
+    .details {
+        display: flex;           
+        flex-wrap: wrap;         
+        margin-left: 20px;
+    } 
+    input,select{
+        width: 100%;
+    }
+    button{
+        width: 25%;
+        }  
+}

@@ -21,7 +21,6 @@ h2 {
 
 .personal-Details {
     border: 1px solid #b2bec3;
-    flex-direction: row;
     margin-top: 15px;
     margin-inline: 15px;
     border-radius: 6px;
@@ -36,9 +35,11 @@ h3 {
 }
 
 .details div {
-
-    width: 90%;
-    margin-left: 20px;
+  margin-top: 20px;
+  margin-right: 2%;
+  margin-left: 20px;
+  width: 90%;
+    
 }
 
 p {
@@ -47,7 +48,7 @@ p {
     font-size: large;
 }
 
-input {
+input,select {
     width: 70%;
     padding: 10px;
     border-radius: 4px;
@@ -58,26 +59,10 @@ input {
     border: 1px solid #b2bec3;
 }
 
-input:focus {
+input:focus,select:focus {
     background-color: #ecf0f1;
     border: 1px solid #636e72;
 }
-
-select {
-    width: 70%;
-    padding: 10px;
-    border-radius: 4px;
-    outline: none;
-    border: none;
-    margin-top: 8px;
-    border: 1px solid #b2bec3;
-  
-}
-
-select:focus {
-    background-color: #ecf0f1;
-}
-
 button{
     width: 10%;
     padding: 8px 8px;
