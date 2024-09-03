@@ -1,9 +1,11 @@
 @media screen and (max-width:1000px) {
     .details {
-        display: flex;           
         flex-wrap: wrap;         
-        margin-left: 2%;
     } 
+    .details div{
+        margin-left:10px;
+        margin-right: 10px;
+    }
     input,select{
         width: 100%;
     }
