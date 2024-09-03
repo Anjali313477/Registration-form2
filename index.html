@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h2>User Master</h2>
+    <form action="">
+        
+     <!-- PERSONAL DETAILS AREA -->
+        <div class="personal-Details">
+            <div class="heading">
+                <h3>PERSONAL DETAILS</h3>
+            </div>
+
+            <div class="details flex">
+    
+                <div>
+                    <p>First Name</p>
+                    <input type="text" id="fname">
+                </div>
+                <div>
+                    <p>Middle Name</p>
+                    <input type="text" id="">
+                </div>
+                <div>
+                    <p>Last Name</p>
+                    <input type="text"id="lastname">
+                </div>
+                <div>
+                    <p>Document</p>
+                    <input type="file" id="file">
+                </div>
+
+            </div>
+
+            <div class="details flex">
+                <div>
+                    <p>Preferred Name</p>
+                    <input type="text" id="prfdname">
+                </div>
+                <div>
+                    <p>login Id</p>
+                    <input type="text" id="id">
+                </div>
+                <div>
+                    <p>Password</p>
+                    <input type="password" id="pswrd">
+                </div>
+                <div>
+                    <p>Status</p>
+                    <select name="Status" id="">
+                        <option value="Active">Active</option>
+                        <option value="Non-Active">Non-Active</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--USER DETAILS AREA  -->
+
+
+        <div class="personal-Details">
+            <div class="heading">
+                <h3>USER DETAILS</h3>
+            </div>
+            <div class="details flex">
+                <div>
+                    <p>Date</p>
+                    <input type="date" id="date">
+                </div>
+                <div>
+                    <p>Title</p>
+                    <input type="text" id="tittle">
+                </div>
+                <div>
+                    <p>Designation</p>
+                    <input type="text" id="Designation">
+                </div>
+                <div>
+                    <p>Date employment commenced</p>
+                    <input type="text" id="DEC">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- CONTACT DETAILS AREA -->
+
+
+        <div class="personal-Details">
+            <div class="heading">
+                <h3>CANTACT DETAILS</h3>
+
+
+                <div class="details flex">
+                    <div>
+                        <p>Contact address</p>
+                        <input type="text" id="contactaddress">
+                    </div>
+                    <div>
+                        <p>Location</p>
+                        <input type="text" id="location">
+                    </div>
+                    <div>
+                        <p>Phone(area-local)</p>
+                        <input type="number" id="phnarea">
+                    </div>
+                    <div>
+                        <p>Fax(area-local)</p>
+                        <input type="number"id="faxarealocal">
+                    </div>
+               </div>
+
+                <div class="details flex">
+                    <div>
+                        <p>Mobile Phone</p>
+                        <input type="number" id="no">
+                    </div>
+                    <div>
+                        <p>Email address</p>
+                        <input type="email" id="mail">
+                    </div>
+                    <div>
+                        <p>Pin Code</p>
+                        <input type="number" id="pcode">
+                    </div>
+                    <div>
+                        <p>Comments</p>
+                        <input type="text">
+                    </div>
+               </div>
+            </div>
+        </div>
+
+
+        <!-- EMERGENCY CONTACT AREA -->
+
+
+        <div class="personal-Details">
+            <div class="heading">
+                <h3>EMERGENCY CONTACT</h3>
+            </div>
+
+            <div class="details flex">
+                <div>
+                    <p>Name</p>
+                    <input type="text" id="name">
+                </div>
+                <div>
+                    <p>Address</p>
+                    <input type="text" id="Adrs">
+                </div>
+                <div>
+                    <p>Telephone</p>
+                    <input type="number" id="telephn">
+                </div>
+                <div>
+                    <p>Mobile</p>
+                    <input type="number" id="mobileno">
+                </div>
+            </div>
+        </div>
+        <button type="submit" id="button">Submit</button>
+    </form>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
