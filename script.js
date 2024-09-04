@@ -23,20 +23,35 @@ btn.addEventListener("click", (event) => {
     let tittle = document.querySelector("#tittle").value
     let Designation = document.querySelector("#Designation").value
     let DEC = document.querySelector("#DEC").value
+    let letter = /^[A-Za-z]+$/
+
     if (fname == "") {
         swal("Fast Name is required!", "", "warning");
         return false;
     }
+    if (!letter.test(fname)) {
+        swal("Fast Name should contain only letters!", "", "warning")
+        return false;
+    }
     if (lname == "") {
         swal("Last Name is required!", "", "warning");
+        return false;
+
+    }
+    if (!letter.test(lname)) {
+        swal("Last Name should contain only letters!", "", "warning")
         return false;
     }
     if (file == "") {
         swal("Document is required!", "", "warning");
         return false;
     }
-    if (preferredname.length.length<10) {
+    if (preferredname.length.length < 10) {
         swal("Enter Preferred Name", "", "warning");
+        return false;
+    }
+    if (!letter.test(preferredname)) {
+        swal("Preferred Name should contain only letters!", "", "warning")
         return false;
     }
     if (ID == "") {
@@ -47,6 +62,11 @@ btn.addEventListener("click", (event) => {
         swal("Please Enter a required Passward!", "", "warning");
         return false;
     }
+    if (/\s/.test(passward)) {
+        swal("Password should not contain spaces!", "", "warning");
+        return false;
+    }
+
     if (Date == "") {
         swal("Please Enter a Date", "", "warning");
         return false;
@@ -70,7 +90,8 @@ btn.addEventListener("click", (event) => {
     if (location == "") {
         swal("location is required !", "", "warning");
         return false;
-    } if (phnarealocal.toString().length != 10) {
+    }
+    if (phnarealocal.toString().length != 10) {
         swal(" Phone no is required!", "", "warning");
         return false;
     }
@@ -89,7 +110,12 @@ btn.addEventListener("click", (event) => {
     if (name == "") {
         swal("Name is required!", "", "warning");
         return false;
-    } if (adrs == "") {
+    }
+    if (!letter.test(name)) {
+        swal("Name should contain only letters!", "", "warning")
+        return false;
+    }
+    if (adrs == "") {
         swal("Address is required!", "", "warning");
         return false;
     } if (telephn.toString().length != 10) {
@@ -101,7 +127,7 @@ btn.addEventListener("click", (event) => {
     }
     var regx = /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,8})(\.[a-z]+)?$/;
     if (!regx.test(emailid)) {
-        swal("Enter valid Email id","","warning")
+        swal("Enter valid Email id", "", "warning")
         return false;
     }
     swal("Form was submitted successfully!", "", "success");
