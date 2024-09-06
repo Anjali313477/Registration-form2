@@ -1,45 +1,35 @@
 let btn = document.querySelector("#button")
 btn.addEventListener("click", (event) => {
     event.preventDefault();
-    debugger
-    var emailid = document.getElementById('mail').value
-    let fname = document.querySelector("#fname").value
-    let lname = document.querySelector("#lastname").value
+    var emailid = document.getElementById('mail').value.trim();
+    let fname = document.querySelector("#fname").value.trim();
+    let lname = document.querySelector("#lastname").value.trim();
     let file = document.querySelector("#file").value
     let phnNumber = document.querySelector("#no").value
     let pincode = document.querySelector("#pcode").value
     let ID = document.querySelector("#id").value
-    let passward = document.querySelector("#pswrd").value
+    let passward = document.querySelector("#pswrd").value .trim();
     let Date = document.querySelector("#date").value
-    let contactaddress = document.querySelector("#contactaddress").value
-    let location = document.querySelector("#location").value
-    let name = document.querySelector("#name").value
-    let adrs = document.querySelector("#Adrs").value
+    let contactaddress = document.querySelector("#contactaddress").value .trim();
+    let location = document.querySelector("#location").value.trim();
+    let name = document.querySelector("#name").value.trim();
+    let adrs = document.querySelector("#Adrs").value.trim();
     let telephn = document.querySelector("#telephn").value
     let mobile = document.querySelector("#mobileno").value
-    let preferredname = document.querySelector("#prfdname").value
+    let preferredname = document.querySelector("#prfdname").value.trim();
     let phnarealocal = document.querySelector("#phnarea").value
     let faxarealocal = document.querySelector("#faxarealocal").value
-    let tittle = document.querySelector("#tittle").value
-    let Designation = document.querySelector("#Designation").value
-    let DEC = document.querySelector("#DEC").value
+    let tittle = document.querySelector("#tittle").value.trim();
+    let Designation = document.querySelector("#Designation").value.trim();
+    let DEC = document.querySelector("#DEC").value.trim();
     let letter = /^[A-Za-z]+$/
 
     if (fname == "") {
         swal("Fast Name is required!", "", "warning");
         return false;
     }
-    if (!letter.test(fname)) {
-        swal("Fast Name should contain only letters!", "", "warning")
-        return false;
-    }
     if (lname == "") {
         swal("Last Name is required!", "", "warning");
-        return false;
-
-    }
-    if (!letter.test(lname)) {
-        swal("Last Name should contain only letters!", "", "warning")
         return false;
     }
     if (file == "") {
@@ -54,8 +44,8 @@ btn.addEventListener("click", (event) => {
         swal("Preferred Name should contain only letters!", "", "warning")
         return false;
     }
-    if (ID == "") {
-        swal("ID is required!", "", "warning");
+    if (ID.toString().length != 10) {
+        swal("Please Enter Valid Id Number!", "", "warning");
         return false;
     }
     if (passward == "") {
@@ -111,10 +101,6 @@ btn.addEventListener("click", (event) => {
         swal("Name is required!", "", "warning");
         return false;
     }
-    if (!letter.test(name)) {
-        swal("Name should contain only letters!", "", "warning")
-        return false;
-    }
     if (adrs == "") {
         swal("Address is required!", "", "warning");
         return false;
@@ -128,6 +114,10 @@ btn.addEventListener("click", (event) => {
     var regx = /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,8})(\.[a-z]+)?$/;
     if (!regx.test(emailid)) {
         swal("Enter valid Email id", "", "warning")
+        return false;
+    }
+    if (/\s/.test(emailid)) {
+        swal("Emai ID should not contain spaces!", "", "warning");
         return false;
     }
     swal("Form was submitted successfully!", "", "success");
