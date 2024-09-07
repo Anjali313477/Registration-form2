@@ -7,10 +7,10 @@ btn.addEventListener("click", (event) => {
     let file = document.querySelector("#file").value
     let phnNumber = document.querySelector("#no").value
     let pincode = document.querySelector("#pcode").value
-    let ID = document.querySelector("#id").value
-    let passward = document.querySelector("#pswrd").value .trim();
+    let ID = document.querySelector("#id").value.trim()
+    let passward = document.querySelector("#pswrd").value.trim();
     let Date = document.querySelector("#date").value
-    let contactaddress = document.querySelector("#contactaddress").value .trim();
+    let contactaddress = document.querySelector("#contactaddress").value.trim();
     let location = document.querySelector("#location").value.trim();
     let name = document.querySelector("#name").value.trim();
     let adrs = document.querySelector("#Adrs").value.trim();
@@ -22,30 +22,52 @@ btn.addEventListener("click", (event) => {
     let tittle = document.querySelector("#tittle").value.trim();
     let Designation = document.querySelector("#Designation").value.trim();
     let DEC = document.querySelector("#DEC").value.trim();
-    let letter = /^[A-Za-z]+$/
+    let status = document.querySelector("#Status").value
+    let letter = /^[A-Za-z\s]+$/
+    let num = /^[0-9]+$/
 
     if (fname == "") {
         swal("Fast Name is required!", "", "warning");
+        return false;
+    }
+    if (!letter.test(fname)) {
+        swal("First Name should contain only letters!", "", "warning")
+        return false;
+    }
+    if (fname.length < 3) {
+        swal("Please Enter Proper Name", "", "warning");
         return false;
     }
     if (lname == "") {
         swal("Last Name is required!", "", "warning");
         return false;
     }
+    if (!letter.test(lname)) {
+        swal("Last Name should contain only letters!", "", "warning")
+        return false;
+    }
+    if (lname.length < 3) {
+        swal("Please Enter Proper Last Name", "", "warning");
+        return false;
+    }
     if (file == "") {
         swal("Document is required!", "", "warning");
         return false;
     }
-    if (preferredname.length.length < 10) {
-        swal("Enter Preferred Name", "", "warning");
+    if (preferredname.length < 3) {
+        swal("Enter valid Preferred Name", "", "warning");
         return false;
     }
     if (!letter.test(preferredname)) {
         swal("Preferred Name should contain only letters!", "", "warning")
         return false;
     }
-    if (ID.toString().length != 10) {
-        swal("Please Enter Valid Id Number!", "", "warning");
+    if (ID == "") {
+        swal("ID is required!", "", "warning");
+        return false;
+    }
+    if (/\s/.test(ID)) {
+        swal("ID should not contain spaces!", "", "warning");
         return false;
     }
     if (passward == "") {
@@ -56,21 +78,44 @@ btn.addEventListener("click", (event) => {
         swal("Password should not contain spaces!", "", "warning");
         return false;
     }
-
+    if (status == "") {
+        swal("Status is required to fill", "", "warning")
+        return false;
+    }
     if (Date == "") {
         swal("Please Enter a Date", "", "warning");
         return false;
     }
     if (tittle == "") {
-        swal(" Tittle is required!", "", "warning");
+        swal("Tittle is required!", "", "warning");
+        return false;
+    }
+    if (tittle.length > 15) {
+        swal("Enter Valid Tittle", "", "warning")
+        return false;
+    }
+    if (!letter.test(tittle)) {
+        swal("Tittle should contain only letters!", "", "warning")
         return false;
     }
     if (Designation == "") {
         swal("Designation is required!", "", "warning");
         return false;
     }
+    if (Designation.length > 15) {
+        swal("Enter Valid Designation")
+        return false;
+    }
+    if (!letter.test(Designation)) {
+        swal("Designation should contain only letters!", "", "warning")
+        return false;
+    }
     if (DEC == "") {
         swal("Date employment commenced is required!", "", "warning");
+        return false;
+    }
+    if (!letter.test(DEC)) {
+        swal("Date employment commenced should contain only letters!", "", "warning")
         return false;
     }
     if (contactaddress == "") {
@@ -101,13 +146,23 @@ btn.addEventListener("click", (event) => {
         swal("Name is required!", "", "warning");
         return false;
     }
+    if (name.length < 3) {
+        swal("Please Enter Proper Name", "", "warning");
+        return false;
+    }
+    if (!letter.test(name)){
+        swal("Date employment commenced should contain only letters!", "", "warning")
+        return false;
+    }
     if (adrs == "") {
         swal("Address is required!", "", "warning");
         return false;
-    } if (telephn.toString().length != 10) {
+    }
+    if (telephn.toString().length != 10) {
         swal("Valid Telephone no is required!", "", "warning");
         return false;
-    } if (mobile.toString().length != 10) {
+    }
+    if (mobile.toString().length != 10) {
         swal("Valid Mobile no is required!", "", "warning");
         return false;
     }

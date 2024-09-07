@@ -6,7 +6,8 @@
 
 body {
     height: 100vh;
-    background-color: white
+    background-color: white;
+    margin: 10px 10px;
 }
 
 .flex {
@@ -17,11 +18,13 @@ h2 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #dfe6e9;
     padding-left: 10px;
+    margin-inline: 15px;
+    padding-bottom: 10px;
 }
 
 .personal-Details {
     border: 1px solid #b2bec3;
-    margin-top: 5px;
+    margin-top: 12px;
     margin-inline: 15px;
     border-radius: 6px;
     padding-bottom: 20px;
