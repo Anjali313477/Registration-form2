@@ -27,7 +27,7 @@ btn.addEventListener("click", (event) => {
     let num = /^[0-9]+$/
 
     if (fname == "") {
-        swal("Fast Name is required!", "", "warning");
+        swal("First Name is required!", "", "warning");
         return false;
     }
     if (!letter.test(fname)) {
@@ -35,7 +35,7 @@ btn.addEventListener("click", (event) => {
         return false;
     }
     if (fname.length < 3) {
-        swal("Please Enter Proper Name", "", "warning");
+        swal("Please Enter Proper First Name", "", "warning");
         return false;
     }
     if (lname == "") {
@@ -63,15 +63,15 @@ btn.addEventListener("click", (event) => {
         return false;
     }
     if (ID == "") {
-        swal("ID is required!", "", "warning");
+        swal("Login ID is required!", "", "warning");
         return false;
     }
     if (/\s/.test(ID)) {
-        swal("ID should not contain spaces!", "", "warning");
+        swal("Login ID should not contain spaces!", "", "warning");
         return false;
     }
     if (passward == "") {
-        swal("Please Enter a required Passward!", "", "warning");
+        swal("Please Enter a required Password!", "", "warning");
         return false;
     }
     if (/\s/.test(passward)) {
@@ -127,11 +127,11 @@ btn.addEventListener("click", (event) => {
         return false;
     }
     if (phnarealocal.toString().length != 10) {
-        swal(" Phone no is required!", "", "warning");
+        swal(" Phone Number is required!", "", "warning");
         return false;
     }
     if (faxarealocal.toString().length != 10) {
-        swal(" Fax no is required!", "", "warning");
+        swal(" Fax Number is required!", "", "warning");
         return false;
     }
     if (phnNumber == "" || phnNumber.toString().length != 10) {
@@ -151,7 +151,7 @@ btn.addEventListener("click", (event) => {
         return false;
     }
     if (!letter.test(name)){
-        swal("Date employment commenced should contain only letters!", "", "warning")
+        swal("Name Should contain only letters", "", "warning")
         return false;
     }
     if (adrs == "") {
